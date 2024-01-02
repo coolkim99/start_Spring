@@ -5,12 +5,16 @@ import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 //Controller의 AutoWired로 연결시켜 주기 위해서 Service 어노테이션 사용해야함
+//SpringConfig에 Bean으로 관리시 없어도 됨
 //@Service
+
+@Transactional
 public class MemberService {
     private final MemberRepository memberRepository;
 
